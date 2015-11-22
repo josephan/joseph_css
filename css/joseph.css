@@ -1,0 +1,90 @@
+/* THE CONTAINER*/
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* THE ROW */
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* COLUMN POSITIONING */
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  width: 12.5%;
+  /*-- our gutter --*/
+  padding: 12px;
+}
+
+/* THE COLUMNS */
+.col-1{
+  width: 12.5%; 
+}
+.col-2{
+  width: 25%; 
+}
+.col-3{
+  width: 37.5%; 
+}
+.col-4{
+  width: 50%;
+}
+.col-5{
+  width: 62.5%;
+}
+.col-6{
+  width: 75%;
+}
+.col-7{
+  width: 87.5%;
+}
+.col-8{
+  width: 100%;
+}
+/*-- setting border box on all elements inside the grid --*/
+.grid-container *{
+  box-sizing: border-box;
+}
+
+div {
+  border: 1px solid grey;
+  background-color: red;
+}
+
+.main {
+  margin: 0 auto;
+}
+
+@media all and (max-width:800px){
+    .col-1{ width: 25%;    }
+    .col-2{ width: 50%;        }
+    .col-3{ width: 75%;    }
+    .col-4{ width: 100%;    }
+    .col-5{ width: 100%;    }
+    .col-6{ width: 100%;      }
+    .col-7{ width: 100%;}
+    .col-8{ width: 100%; }
+
+    .row .col-2:last-of-type{
+        width: 100%; 
+    }
+
+    .row .col-5 ~ .col-1{
+        width: 100%; 
+    }
+}
+
+@media all and (max-width:650px){
+    .col-1{ width: 50%;        }
+    .col-2{ width: 100%;    }
+    .col-3{ width: 100%;    }
+    .col-4{ width: 100%;    }
+    .col-5{ width: 100%;    }
+    .col-6{ width: 100%;      }
+    .col-7{ width: 100%;    }
+    .col-8{ width: 100%;      }
+}
